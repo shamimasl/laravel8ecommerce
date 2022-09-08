@@ -25,8 +25,8 @@ return new class extends Migration
             $table->enum('stock', ['instock', 'outstock']);
             $table->boolean('featured')->default(false);
             $table->unsignedBigInteger('quantity')->default(10);
-            $table->string('image');
-            $table->text('images');
+            $table->string('image')->nullable();
+            $table->text('images')->nullable();
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->delete('cascade');
